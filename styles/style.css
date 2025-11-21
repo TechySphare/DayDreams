@@ -1,13 +1,37 @@
-@media(max-width:1080px){
- body{
-   height: 2500px;
-   width:1080px;
-   margin: 0px;
-   padding: 0px;
- } 
-  div{
-    height:5%;
+*{
+margin: 0px;
+padding: 0px;  
+}
+header{
+  background-color: #D9D9D9;
+  height: 22px;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 900;  
+}
+.logo-panel{
+    height:60px;
   width:100%;
-background-color:black;    
+background-color:#403935;  
+  display: flex;
+  justify-content:center;
+  align-items: center;
+        img{
+          height: 50px;
+          border-radius:50%; 
+          
+        }  
   }
+.search-panel{
+  height: 40px;
+  width:100%;
+  background-color: #D9D9D9; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+      .search-bar{
+        height: 75%;
+        width:60%;
+        background-color: #FFFFFF;
+      }
 }
