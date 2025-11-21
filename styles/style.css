@@ -1,1 +1,101 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  
+}
+@media(max-width:440px){
+  body{
+    width:440px;
+  }
+.mini-panel{
+      width:440px;
+      height: 22px;
+      background-color:rgba(217,217,217,1);
+      display: flex;
+      justify-content: space-evenly;
+            .mini-panel-1{
+              font-size: 14px;
+              font-weight: 800;
+              margin-right: 40%;
+            }
+              .mini-panel-2{
+              font-size: 14px;
+              font-weight: 800;
+            }
+    }
+    .logo-panel{
+      height: 60px;
+      width:100%;
+      background-color:rgba(64,57,53,1);
+    }
+    .work-panel{
+      justify-items: center;
+      align-items: center;
+      align-content: center;
+      height: 40px;
+      width:;
+      background-color:rgba(217,217,217,1);
+          .searchbar{
+            background-color:rgba(255,255,255,1);
+            width:63%;
+            height:25px;
+            border-radius: 3px;
+          }
+    }
+.notice-panel{  
+    width:100%;
+    height:150px;
+  justify-items: center;
+  padding-top:9px;
+        .image-panel{
+          border-radius: 3px;
+          height: 129px;
+          width:89%;
+          background-color: rgba(217,217,217,1);
+        }
+        .notice-panel{
+          background-color: rgba(115,125,111,1);
+          height: 30px;
+          width:70%;
+          margin-top:-15px; 
+          border-radius: 6px;
+        }
+}
+.items-panel{
+  padding-top:9px;
+  height: 470px;
+  width:100%;
+  justify-items: center; 
+.varity-panel{
+  border-radius: 6px;
+  margin-bottom: 10px; 
+  height: 37px;
+  width:82%;  
+  background-color: rgba(217,217,217,1);
+}
+  .product-panel{
+    width:94%;
+    height: 421px;
+    background-color: rgba(247,247,247,1);
+    border-radius: 6px;
+    justify-content: center;
+    .holder{
+      height:45%;
+      width:100%;
+      display: flex;
+      justify-content: center;
+    align-content: center;
+          .product{
+            margin-top: 10px; 
+            margin-left:10px; 
+            border-radius: 5px;
+            height: 100%;
+            width:45%;
+            background-color: #E0EAF2;
+          }
+    }
+  }
 
+}
+
+}
