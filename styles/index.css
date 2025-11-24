@@ -125,7 +125,7 @@
     width:90%;
   }
   .product-hub{
-    height:70%;
+    height:65%;
     width:95%;
     background-color: ;
     background-image: linear-gradient(#F7F7F7, white);;
@@ -184,7 +184,7 @@ button{
   border-radius: 20px 20px;
 }    
     .mini-product{
-          height: 16%;
+          height: 18%;
           width:100%;
           display: flex;
           justify-content: center;
