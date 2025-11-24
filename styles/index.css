@@ -224,7 +224,7 @@ button{
     justify-items: center;
     align-content:center;
     .brand-details{
-      height: 10%;
+      height: 8%;
       width:100%;
       justify-items: center;
       margin-top:10%;
@@ -232,13 +232,27 @@ button{
     }
     hr{
       width:90%;
-      height: 1px;
+      height: 2px;
       border:0px;
-      background-color:aqua;
+      background-color:white;
     margin-top:3%;  
     }
+   .developer-details{
+      height: 17%;
+      width:100%;
+      justify-items: center;
+      align-content:center;
+      justify-content:center;
+      justify-items: center;
+      margin-top: 2%;
+      img{
+        height: 10%;
+        width:10%;
+        
+      }
+    }
     .developer-details{
-      height: 20%;
+      height: 17%;
       width:100%;
       justify-items: center;
       align-content:center;
