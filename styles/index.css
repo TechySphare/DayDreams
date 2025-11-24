@@ -142,7 +142,7 @@
           align-items: center;
           .a-product{
             background-color:#E0EAF2;
-            height:90%;
+            height:95%;
             width:45%;
             justify-content: center;
             align-content:center;
@@ -175,11 +175,13 @@
                 }
           }
         } 
-button{
-  height: 10%;
-  width:10%;
+a{
+  text-decoration: none;
+  justify-items:center;
+  color:black;
+  margin-right: 2%; 
+  font-size: 150%;
   font-family: cursive;
-  background-image: linear-gradient(pink, white);
   border:0px;
   border-radius: 20px 20px;
 }    
@@ -228,10 +230,11 @@ button{
       width:100%;
       justify-items: center;
       margin-top: 10%;
-      margin-bottom: 5%;
+      margin-bottom: 4%;
       color:white;
     }
     hr{
+      margin: 1%;
       width:90%;
       height: 2px;
       border:0px;
