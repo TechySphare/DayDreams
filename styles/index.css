@@ -125,15 +125,16 @@
     width:90%;
   }
   .product-hub{
-    height:65%;
+    height:70%;
     width:95%;
-    background-color: #F7F7F7;
+    background-color: ;
+    background-image: linear-gradient(#F7F7F7, white);;
     margin-top:10%;
     margin-bottom:5%;
     border-radius: 4px;
     
         .current-product{
-          height: 35%;
+          height: 30%;
           width:100%;
           display: flex;
           justify-content: center;
@@ -183,7 +184,7 @@ button{
   border-radius: 20px 20px;
 }    
     .mini-product{
-          height: 20%;
+          height: 16%;
           width:100%;
           display: flex;
           justify-content: center;
