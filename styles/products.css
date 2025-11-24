@@ -94,14 +94,14 @@
     border-radius: 10px;
   }
   .product-hub{
-    height:135%;
+    height:125%;
     width:95%;
-    background-color: #F7F7F7;
+    background-image: linear-gradient(#F7F7F7,white);
     margin-top:5%;
     margin-bottom:5%;
     border-radius: 4px; 
         .current-product{
-          height: 12.5%;
+          height: 14%;
           width:100%;
           display: flex;
           justify-content: center;
@@ -114,38 +114,69 @@
             width:45%;
             border-radius: 10px;
             
+            .product01{
+                  height: 95%;
+                  width:100%;
+                  border-radius: 5px;
+              text-align: center;
+              
+              p{
+                    font-family:  cursive;
+                    font-size: 150%;
+                  }
+                  a{
+                    font-family: serif;
+                    font-size: 110%;
+                    font-weight: 700;
+                  }
+                  .img{
+                    height:90%;
+                    width:100%;
+                    border-radius: 5px;
+                    margin-bottom: 2%;
+                    img{
+                      height: 100%;
+                      width:100%;
+                      border-radius: 10px;
+                    }
+                  }
+                
+            }
           }
         }
+        
   }
-  .detail-panel{
-    
-    height: 13%;
+ .detail-panel{
+    margin-top:-16%; 
+    height: 18%;
     width:100%;
-    background-color: #686675;
+    background-image:linear-gradient(white,#686675);
     justify-items: center;
     align-content:center;
     .brand-details{
-      height: 15%;
+      height: 8%;
       width:100%;
       justify-items: center;
-      margin:10px;
+      margin-top: 2%;
+      margin-bottom: 4%;
       color:white;
     }
     hr{
+      margin: 1%;
       width:90%;
-      height: 1px;
+      height: 2px;
       border:0px;
-      background-color:pink;
-    margin-top:3%;  
+      background-color:white;
+      
     }
     .developer-details{
-      height: 70%;
+      height: 7%;
       width:100%;
       justify-items: center;
       align-content:center;
       justify-content:center;
       justify-items: center;
-      margin: 0px;
+      margin-top: 1%;
       img{
         height: 10%;
         width:10%;
