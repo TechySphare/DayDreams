@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("popupSearch").style.display="none";
   document.getElementById("popupSearch").style.display="none";
 }
-document.getElementById("popupSearch").onclick = closePopup;
+document.getElementById("popupSearch").ondblclick = closePopup;
 
 });
 
