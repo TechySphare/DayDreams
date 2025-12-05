@@ -6,21 +6,22 @@
   <title>DayDreams</title>
 </head>
 <body>  
-<!-- =========== POPUP-Buy =========== -->
+<!-- =========== POPUP-Buy with Image Slider =========== -->
 <div id="overlay"></div>
-<div id="popup-box">
+<div id="popup-box"> 
+    <!-- Navigation Buttons -->
+    <span class="nav-btn prev" onclick="prevImg()">❮</span>
+    <span class="nav-btn next" onclick="nextImg()">❯</span>
     <img id="popup-img">
     <div class="popup-details">
         <h2 id="popup-name"></h2>
         <p>Price: <b id="popup-price"></b></p>
         <p id="popup-desc"></p>
-        <!-- WhatsApp Auto Redirect -->
         <a id="insta-link" class="instagram-btn" target="_blank">Order on Instagram</a>
         <div class="close-btn" onclick="closePopup()">Close</div>
     </div>
 </div>
-<!-- ============================= -->
-  
+
 <!-- =========== Logo panel =========== -->
   <div class="body animation">
   <header>
@@ -77,7 +78,7 @@
     <div class="product-hub">
        <!-- Product-box-A -->
       <div class="current-product">
-        <div class="a-product border-black" onclick="showProduct('Bracelet','<del>₹199</del>  ₹99','others/images/product/necklace02-1.jpg','Handmade premium bracelet, best quality with beads')">
+        <div class="a-product border-black" onclick="showProduct('Bracelet','<del>₹199</del>  ₹99',['others/images/product/necklace02-1.jpg','others/images/product/necklace02-2.jpg'],'Handmade premium bracelet, best quality with beads')">
           <div class="product01">
             <div class="img">
               <img src="others/images/product/necklace02-1.jpg">
@@ -85,7 +86,7 @@
             <i><p> <a>Bracelet :</a> <del style="color:pink;">299₹ </del> <b style="color:black;">149₹</b> Only</p>   </i>      
           </div>
         </div>
-        <div class="a-product border-black" onclick="showProduct('Phonechram','<del>₹199</del>  ₹99','others/images/product/phonechram02-3.jpg','Handmade premium bracelet, best quality with beads')">
+        <div class="a-product border-black" onclick="showProduct('Phonechram','<del>₹199</del>  ₹99',['others/images/product/phonechram02-3.jpg','others/images/product/phonechram02-2.jpg','others/images/product/phonechram02-1.jpg'],'Handmade premium bracelet, best quality with beads')">
           <div class="product01">
             <div class="img">
               <img src="others/images/product/phonechram02-3.jpg">
