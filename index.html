@@ -7,6 +7,24 @@
   <title>DayDreams</title>
 </head>
 <body>  
+  
+<!-- =========== POPUP =========== -->
+<div id="overlay"></div>
+<div id="popup-box">
+    <img id="popup-img">
+    <div class="popup-details">
+        <h2 id="popup-name"></h2>
+        <p>Price: <b id="popup-price"></b></p>
+        <p id="popup-desc"></p>
+
+        <!-- WhatsApp Auto Redirect -->
+        <a id="whatsapp-link" class="whatsapp-btn" target="_blank">Order on WhatsApp</a>
+        <div class="close-btn" onclick="closePopup()">Close</div>
+    </div>
+</div>
+<!-- ============================= -->
+
+
   <div class="body animation">
   <header>
     <p>Home</p>
@@ -26,12 +44,12 @@
         </select>
     </div>
   </div>
-    
+  
     <div class="advertisment">
       <p>Advertisment Available for other brand !!</p>
       <p><a href="https://www.instagram.com/daydream_beads_" class="border-white">DM US</a> or Contact <a href="https://www.instagram.com/sk_asraful_islam00" class="border-white">ARTIST</a>.</p>
     </div>
-    <div class="notice-panel">
+      <div class="notice-panel">
       <p>Get best Quality product in Budget</p>
     </div>
     <div class="varity-panel">
@@ -39,7 +57,7 @@
     </div>
     <div class="product-hub">
       <div class="current-product">
-        <div class="a-product border-black">
+        <div class="a-product border-black" onclick="showProduct('Bracelet','149₹','others/images/product/necklace02-1.jpg','Handmade premium bracelet, best quality with beads')">
           <div class="product01">
             <div class="img">
               <img src="others/images/product/necklace02-1.jpg">
@@ -47,7 +65,7 @@
             <i><p> <a>Bracelet :</a> <del style="color:pink;">299&#8377; </del> <b style="color:black;">149&#8377;</b> Only</p>   </i>      
           </div>
         </div>
-        <div class="a-product border-black">
+        <div class="a-product border-black" onclick="showProduct('Bracelet','149₹','others/images/product/necklace02-1.jpg','Handmade premium bracelet, best quality with beads')">
           <div class="product01">
             <div class="img">
               <img src="others/images/product/phonechram02-3.jpg">
@@ -59,11 +77,11 @@
      
       <div class="mini-product">
   
-        <div class="b-product  border-black">
+        <div class="b-product border-black" onclick="showProduct('Bracelet','149₹','others/images/product/necklace02-1.jpg','Handmade premium bracelet, best quality with beads')">
           <img src="others/images/product/bagchram06-1.jpg">
           <center><i><p> <a>BagChram :</a> <del style="color:pink;">499&#8377; </del> <b style="color:black;">169&#8377;</b> Only</p> </i></center>
         </div>
-        <div class="b-product border-black">
+     <div class="b-product border-black" onclick="showProduct('Bracelet','149₹','others/images/product/necklace02-1.jpg','Handmade premium bracelet, best quality with beads')">
       <img src="others/images/product/bagchram04-1.jpg">
             <center><i><p> <a>BagChram :</a> <del style="color:pink;">129&#8377; </del> <b style="color:black;">65&#8377;</b> Only</p> </i></center>
     </div>
@@ -142,5 +160,7 @@
     </div>
     
   </div>
+    
+    <script src="styles/index.js"></script>
 </body>
 </html>
