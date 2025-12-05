@@ -265,7 +265,7 @@ justify-content: center;
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
   width: 85%;
-  max-width: 450px;
+  max-width: 500px;
   background: white;
   padding: 15px;
   border-radius: 12px;
@@ -290,11 +290,12 @@ justify-content: center;
   margin: 5px 0;
 }
 
-.whatsapp-btn{
+.instagram-btn{
   display:block;
   text-align:center;
   margin-top:10px;
-  background:#25D366;
+  background-image:linear-gradient(white,#686675);
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
   padding:10px;
   border-radius:6px;
   color:white;
