@@ -4,7 +4,7 @@ function showProduct(name,price,img,desc){
   document.getElementById("popup-price").innerHTML = price;
   document.getElementById("popup-img").src = img;
   document.getElementById("popup-desc").innerHTML = desc;
-
+  
   // 🔥 Instagram DM redirect instead of WhatsApp
   let username = "daydream_beads_";  // <<< Your Insta Username
   let message = `Hello, I want to order ${name} for ${price}`;
@@ -22,16 +22,37 @@ function closePopup(){
 }
 document.getElementById("overlay").onclick = closePopup;
 
+
+
 //<============== Buy Box ===================>
 
 document.addEventListener("DOMContentLoaded", function(){
 
   // Full product list with images, price, description
   const products = [
-    {name:"Bracelet", price:"149₹", img:"others/images/product/necklace02-1.jpg", desc:"Handmade premium bracelet"},
+    {name:"Bracelet", price:"149₹", img:"others/images/product/bracelet01-1.jpg", desc:"Handmade premium bracelet"},
+   {name:"Bracelet", price:"149₹", img:"others/images/product/bracelet02-1.jpg", desc:"Handmade premium bracelet"},
+   {name:"Bracelet", price:"149₹", img:"others/images/product/bracelet03-1.jpg", desc:"Handmade premium bracelet"},
+   {name:"Bracelet", price:"149₹", img:"others/images/product/bracelet04-1.jpg", desc:"Handmade premium bracelet"},
+   {name:"Bracelet", price:"", img:"others/images/product/bracelet05-1.jpg", desc:"note Available"},
+   {name:"Bracelet", price:"149₹", img:"others/images/product/bracelet06-1.jpg", desc:"Handmade premium bracelet"},
+   {name:"Bracelet", price:"149₹", img:"others/images/product/bracelet07-1.jpg", desc:"Handmade premium bracelet"},
+  {name:"PhoneChram", price:"99₹", img:"others/images/product/phonechram01-1.jpg", desc:"Handmade phonecharm"},
     {name:"PhoneChram", price:"99₹", img:"others/images/product/phonechram02-3.jpg", desc:"Handmade phonecharm"},
+  {name:"PhoneChram", price:"99₹", img:"others/images/product/phonechram03-1.jpg", desc:"Handmade phonecharm"},
+  {name:"PhoneChram", price:"99₹", img:"others/images/product/phonechram04-1.jpg", desc:"Handmade phonecharm"},
+  {name:"PhoneChram", price:"99₹", img:"others/images/product/phonechram05-1.jpg", desc:"Handmade phonecharm"},
+   {name:"BagChram", price:"169₹", img:"others/images/product/bagchram01-1.jpg", desc:"Stylish bag charm"},
+   {name:"BagChram", price:"169₹", img:"others/images/product/bagchram02-1.jpg", desc:"Stylish bag charm"},
+   {name:"BagChram", price:"169₹", img:"others/images/product/bagchram03-1.jpg", desc:"Stylish bag charm"},
+   {name:"BagChram", price:"169₹", img:"others/images/product/bagchram04-1.jpg", desc:"Stylish bag charm"},
+   {name:"BagChram", price:"169₹", img:"others/images/product/bagchram05-1.jpg", desc:"Stylish bag charm"},
     {name:"BagChram", price:"169₹", img:"others/images/product/bagchram06-1.jpg", desc:"Stylish bag charm"},
-    {name:"Necklace", price:"249₹", img:"others/images/product/necklace01-1.jpg", desc:"Beautiful handmade necklace"}
+   {name:"BagChram", price:"169₹", img:"others/images/product/bagchram07-1.jpg", desc:"Stylish bag charm"},
+   {name:"BagChram", price:"169₹", img:"others/images/product/bagchram08-1.jpg", desc:"Stylish bag charm"},
+    {name:"Necklace", price:"249₹", img:"others/images/product/necklace01-1.jpg", desc:"Beautiful handmade necklace"},
+  {name:"Necklace", price:"249₹", img:"others/images/product/necklace02-1.jpg", desc:"Beautiful handmade necklace"},
+  {name:"Necklace", price:"249₹", img:"others/images/product/necklace03-1.jpg", desc:"Beautiful handmade necklace"},
   ];
 
   const searchInput = document.getElementById("searchInput");
@@ -60,7 +81,8 @@ document.addEventListener("DOMContentLoaded", function(){
                   <img src="${p.img}">
                   <div class="result-info">
                     <h4>${p.name}</h4>
-                    <p>Price: ${p.price}</p>
+                    <h5>Price: ${p.price}</h5>
+                    <p>${p.desc}</p>
                   </div>
                   <a class="order-btn" href="https://www.instagram.com/direct/t/daydream_beads_?text=${encodeURIComponent('Hello, I want to order '+p.name+' for '+p.price)}" target="_blank">Order</a>
                 </div>
@@ -77,4 +99,11 @@ document.addEventListener("DOMContentLoaded", function(){
   searchBtn.addEventListener("click", ()=>showSearchResults(searchInput.value));
   closeSearch.addEventListener("click", ()=>popupSearch.style.display="none");
   document.addEventListener("keydown", e=>{if(e.key==="Escape") popupSearch.style.display="none"});
+  function closePopup(){
+  document.getElementById("popupSearch").style.display="none";
+  document.getElementById("popupSearch").style.display="none";
+}
+document.getElementById("popupSearch").onclick = closePopup;
+
 });
+
