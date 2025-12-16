@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DayDream Beads — Admin Panel</title>
+  <link rel="stylesheet" href="styles/admin.css">
+ 
+</head>
+<body>
+  <header class="admin-header">
+    <h1>DayDream Beads — Admin Panel</h1>
+    
+    <button id="logoutBtn">Logout</button>
+  </header>
+<div class="stats-row">
+  <div class="stat-card">
+    <h4>Total Orders</h4>
+    <span id="totalOrders">0</span>
+  </div>
+  <div class="stat-card pink">
+    <h4>Today</h4>
+    <span id="todayOrders">0</span>
+  </div>
+</div>
+
+  <main>
+    <section class="orders-section">
+      <h2>Customer Orders</h2>
+      <input type="text" id="searchOrders" placeholder="Search by name, product, contact..."><button id="exportCSV">⬇ Export CSV</button>
+
+      <table id="ordersTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Ordered At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="ordersBody">
+          <!-- Orders populated by JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+<!-- Confirm Popup -->
+<div class="confirm-popup" id="confirmPopup">
+  <div class="confirm-box">
+    <h3>Delete Order?</h3>
+    <p>This action cannot be undone.</p>
+
+    <div class="confirm-actions">
+      <button class="confirm-cancel">Cancel</button>
+      <button class="confirm-delete">Delete</button>
+    </div>
+  </div>
+</div>
+<tbody id="ordersBody">
+  <!-- Skeleton rows will be injected here -->
+</tbody>
+<div class="drawer" id="orderDrawer">
+  <div class="drawer-box">
+    <button id="closeDrawer">✕</button>
+    <pre id="drawerContent"></pre>
+  </div>
+</div>
+
+  <script type="module" src="styles/admin.js"></script>
+</body>
+</html>

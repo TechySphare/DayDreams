@@ -91,7 +91,7 @@
         <div class="desc" id="modalDesc"></div>
 
         <div class="modal-actions">
-          <a id="modalOrder" class="order-small" target="_blank" rel="noopener noreferrer" aria-label="Order on Instagram">
+          <a id="modalOrder" class="order-small" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12c0 4.970-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="#fff" stroke-width="0" fill="currentColor"/></svg>
             Order
           </a>
@@ -115,6 +115,23 @@
       <div id="searchResults" aria-live="polite"></div>
     </div>
   </div>
-<script src="styles/index.js"></script>
+  <!-- Input Popup -->
+<div class="input-popup" id="inputPopup">
+  <div class="input-box">
+    <h3 id="popupTitle">Order Details</h3>
+
+    <input type="text" id="userName" placeholder="Full Name" />
+    <input type="tel" id="userContact" placeholder="Contact Number" />
+    <textarea id="userAddress" placeholder="Full Address"></textarea>
+
+    <div class="popup-actions">
+      <button class="popup-cancel">Cancel</button>
+      <button class="popup-submit">Submit</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="styles/index.js"></script>
+
 </body>
 </html>
