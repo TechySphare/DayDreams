@@ -20,8 +20,14 @@
       </div>
 
       <div class="header-actions" aria-hidden="false">
-        <button class="icon-btn mobile-search-toggle" id="mobileSearchToggle" title="Search" aria-label="Open search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="#444" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="#444" stroke-width="1.6"/></svg></button>
+        <button class="icon-btn mobile-search-toggle" id="mobileSearchToggle" title="Search" aria-label="Open search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 21l-4.35-4.35" stroke="#444" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="11" cy="11" r="6" stroke="#444" stroke-width="1.6"/>
+          </svg>
+        </button>
         <a class="pill" href="https://www.instagram.com/daydream_beads_" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram">Instagram</a>
+       <a class="pill" href="admin.html" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram">ADMIN</a>  
         <div class="pill" title="Advertise" aria-hidden="true">Advertise</div>
       </div>
     </div>
@@ -35,14 +41,12 @@
             <option value="phonecharm">Phonecharm</option>
             <option value="bracelet">Bracelet</option>
             <option value="necklace">Necklace</option>
-            <option value="bagcharm">BagCharm</option>
+            <option value="bagcharm">BagCharm</option >
           </select>
         </div>
-
         <div class="search-center">
           <input id="globalSearch" type="search" placeholder="Search DayDreams — e.g. bracelet, phonecharm..." aria-label="Search query" autocomplete="off" />
         </div>
-
         <div class="search-right">
           <button id="searchBtn" class="search-cta" aria-label="Search">Search</button>
         </div>
@@ -64,74 +68,62 @@
   </div>
 
   <div class="notice center" role="status">Get best Quality product in Budget — All India Delivery Available</div>
-
+  
   <main class="container" id="mainContent" aria-live="polite">
     <div id="productGrid" class="grid" aria-label="Products list"></div>
   </main>
 
   <hr style="width:90%;border:0;height:1px;background:rgba(0,0,0,0.04);margin:28px auto">
 
-  <footer class="center" role="contentinfo">ARTIST <br> Full-Stack Web Developer | App Developer | Software Developer<br>© DayDream Beads — Handmade Premium Beads</footer>
+  <footer class="center" role="contentinfo">
+    ARTIST <br> Full-Stack Web Developer | App Developer | Software Developer<br>
+    © DayDream Beads — Handmade Premium Beads
+  </footer>
 
   <!-- Product Modal -->
   <div class="modal-wrap" id="modalWrap" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Product details">
     <div class="modal-overlay" id="modalOverlay" tabindex="-1"></div>
     <div class="modal" role="document" id="modalBox" aria-labelledby="modalName">
       <button class="close" id="modalClose" aria-label="Close product details">✕</button>
-
       <div class="modal-image" id="modalImageWrap" aria-hidden="false">
         <button class="nav-btn nav-left" id="prevBtn" aria-label="Previous image">❮</button>
         <img id="modalImg" alt="Product photo" src="" loading="lazy">
         <button class="nav-btn nav-right" id="nextBtn" aria-label="Next image">❯</button>
       </div>
-
       <div class="modal-body">
         <h2 id="modalName">Product</h2>
         <div class="price" id="modalPrice">₹0</div>
         <div class="desc" id="modalDesc"></div>
-
         <div class="modal-actions">
-          <a id="modalOrder" class="order-small" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12c0 4.970-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="#fff" stroke-width="0" fill="currentColor"/></svg>
-            Order
-          </a>
-          <button id="modalAddView" class="view-btn" aria-label="View on page">View on Page</button>
+          <button id="modalOrderBtn" class="order-small">Order Now</button>
         </div>
-
         <div class="small-thumb-row" id="thumbRow" aria-label="More images"></div>
       </div>
     </div>
   </div>
 
-  <!-- Search overlay -->
-  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
-    <div class="panel" role="region" aria-label="Search results panel">
-      <div class="search-controls">
-        <h3 style="margin:0">Search results</h3>
-        <div style="display:flex;gap:8px;align-items:center">
-          <button id="closeSearchPanel" class="view-btn" aria-label="Close search results">Close</button>
-        </div>
-      </div>
-      <div id="searchResults" aria-live="polite"></div>
-    </div>
-  </div>
   <!-- Input Popup -->
-<div class="input-popup" id="inputPopup">
-  <div class="input-box">
-    <h3 id="popupTitle">Order Details</h3>
-
-    <input type="text" id="userName" placeholder="Full Name" />
-    <input type="tel" id="userContact" placeholder="Contact Number" />
-    <textarea id="userAddress" placeholder="Full Address"></textarea>
-
-    <div class="popup-actions">
-      <button class="popup-cancel">Cancel</button>
-      <button class="popup-submit">Submit</button>
+  <div class="input-popup" id="inputPopup">
+    <div class="input-box">
+      <h3 id="popupTitle">Order Details</h3>
+      <input type="text" id="userName" placeholder="Full Name" />
+      <input type="tel" id="userContact" placeholder="Contact Number" />
+      <textarea id="userAddress" placeholder="Full Address"></textarea>
+      <div class="popup-actions">
+        <button class="popup-cancel">Cancel</button>
+        <button class="popup-submit">Submit</button>
+      </div>
     </div>
   </div>
+
+
+<div id="myOrders" class="container" style="display:none">
+  <h3 style="margin-bottom:10px">My Orders</h3> 
+  <div id="ordersList"></div>
 </div>
 
-<script type="module" src="styles/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+  <script type="module" src="styles/index.js"></script>
 </body>
 </html>

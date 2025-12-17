@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,25 +11,46 @@
 <body>
   <header class="admin-header">
     <h1>DayDream Beads — Admin Panel</h1>
-    
+    <a>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
     <button id="logoutBtn">Logout</button>
+    </a>
   </header>
-<div class="stats-row">
-  <div class="stat-card">
-    <h4>Total Orders</h4>
-    <span id="totalOrders">0</span>
+  <section class="analytics-section">
+  <h2>Analytics Dashboard</h2>
+  <div class="analytics-cards">
+    <div class="analytics-card">
+      <h4>Total Revenue</h4>
+      <span id="totalRevenue">₹0</span>
+    </div>
+    <div class="analytics-card">
+      <h4>Orders This Week</h4>
+      <span id="weeklyOrders">0</span>
+    </div>
   </div>
-  <div class="stat-card pink">
-    <h4>Today</h4>
-    <span id="todayOrders">0</span>
-  </div>
-</div>
-
+</section>
   <main>
     <section class="orders-section">
       <h2>Customer Orders</h2>
-      <input type="text" id="searchOrders" placeholder="Search by name, product, contact..."><button id="exportCSV">⬇ Export CSV</button>
-
+      <input type="text" id="searchOrders" placeholder="Search by name, product, contact...">
+      <a>
+        <button id="exportCSV" class="delete-btn" style="margin-bottom:10px;">⬇ Export CSV</button>
+       <div class="filter-row">
+          <div class="status-filter">
+  <label>Status: 
+    <select id="statusFilter">
+      <option value="All">All</option>
+      <option value="Pending">Pending</option>
+      <option value="Done">Done</option>
+    </select>
+  </label>
+</div>
+  <label>From: <input type="date" id="fromDate"></label>
+  <label>To: <input type="date" id="toDate"></label>     
+  <button id="clearDateFilter" style="position:relative;margin:0px; height:35px;top:18px;">Clear</button>
+</div>
+ 
+      </a>
       <table id="ordersTable">
         <thead>
           <tr>
@@ -37,16 +59,33 @@
             <th>Address</th>
             <th>Product</th>
             <th>Price</th>
-            <th>Ordered At</th>
+            <th>Ordered T</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody id="ordersBody">
           <!-- Orders populated by JS -->
         </tbody>
+       
       </table>
+       <div class="pagination" id="pagination"></div>
+
     </section>
   </main>
+<!-- ADMIN LOGIN MODAL -->
+<div class="login-modal" id="loginModal">
+  <div class="login-card">
+    <h2>🔐 Admin Login</h2>
+
+    <input type="text" id="adminUser" placeholder="Username" autocomplete="off">
+    <input type="password" id="adminPass" placeholder="Password">
+
+    <button id="loginBtn">Login</button>
+
+    <p class="login-error" id="loginError"></p>
+  </div>
+</div>
+
 <!-- Confirm Popup -->
 <div class="confirm-popup" id="confirmPopup">
   <div class="confirm-box">
@@ -68,7 +107,10 @@
     <pre id="drawerContent"></pre>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script type="module" src="styles/admin.js"></script>
 </body>
 </html>
+
+
