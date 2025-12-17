@@ -1,3 +1,104 @@
+
+/* ===== ADMIN LOGIN MODAL ===== */
+.login-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease;
+}
+
+.login-card {
+  background: #111;
+  padding: 28px;
+  width: 320px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  transform: scale(0.85);
+  animation: popIn 0.45s cubic-bezier(.2,.9,.3,1.3) forwards;
+}
+
+.login-card h2 {
+  margin-bottom: 16px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  background: #ff4da6;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-error {
+  color: #ff6b6b;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Animations */
+@keyframes popIn {
+  to { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+.analytics-section {
+  background: #fff;
+  margin: 1rem 2rem 2rem 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.analytics-section h2 {
+  margin-bottom: 1rem;
+  color: #ff4da6;
+}
+
+.analytics-cards {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.analytics-card {
+  flex: 1 1 180px;
+  background: #fff0f6;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.analytics-card h4 {
+  margin-bottom: 0.5rem;
+  color: #ff4da6;
+}
+
+.analytics-card span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 /* ================== RESET ================== */
 * {
   margin: 0;
@@ -382,3 +483,305 @@ tbody tr:nth-child(even) {
   padding:18px;animation:slideIn .4s ease;
 }
 @keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
+.status-select{
+  padding:4px 6px;
+  border-radius:6px;
+  border:1px solid #ffaad4;
+  font-weight:700;
+}
+/* ================== TABLE ROW HOVER ================== */
+tbody tr:hover {
+  background: #ffe0f0;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* ================== EXPORT BUTTON ================== */
+#exportCSV {
+  background: linear-gradient(180deg,#ff4da6,#ff1d71);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#exportCSV:hover {
+  background: linear-gradient(180deg,#ff1d71,#ff4da6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255,77,166,0.35);
+}
+
+/* ================== STATS CARD ANIMATION UPGRADE ================== */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,77,166,0.1), rgba(255,174,212,0.1));
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.stat-card:hover::before {
+  transform: translateX(0);
+}
+
+/* ================== TABLE RESPONSIVE POLISH ================== */
+tbody td {
+  transition: background 0.2s ease;
+}
+/* ================== DATE FILTER ================== */
+.filter-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-row label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #ff4da6;
+  font-size: 0.85rem;
+}
+
+.filter-row input[type="date"] {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ffb6d2;
+  outline: none;
+}
+
+.filter-row input[type="date"]:focus {
+  border-color: #ff4da6;
+  box-shadow: 0 0 6px rgba(255,77,166,0.3);
+}
+
+.filter-row button {
+  background: #ff4da6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.filter-row button:hover {
+  background: #e60073;
+}
+/* ================== ORDER DRAWER ================== */
+.drawer-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 360px; /* slightly wider */
+  background: #fff;
+  padding: 24px 20px;
+  border-radius: 0 0 0 18px;
+  animation: slideInDrawer 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.drawer-box pre {
+  background: #fff0f6;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Courier New', monospace;
+  color: #ff1d71;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.drawer-box button#closeDrawer {
+  align-self: flex-end;
+  background: #ff4da6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.drawer-box button#closeDrawer:hover {
+  background: #e60073;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255,77,166,0.35);
+}
+
+@keyframes slideInDrawer {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.drawer-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #ffe0f5;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.drawer-item strong {
+  color: #ff4da6;
+  width: 90px;
+  display: inline-block;
+}
+/* ================== STICKY TABLE HEADER ================== */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #ff9ed0;
+  z-index: 10;
+}
+/* Table rows already have hover, add transition */
+tbody tr {
+  transition: all 0.25s ease;
+}
+
+/* Drawer hover effect for items */
+.drawer-item:hover {
+  background: #fff0f6;
+  border-radius: 8px;
+  transition: background 0.25s ease;
+}
+
+/* Buttons hover transition (already have), reinforce */
+button {
+  transition: all 0.25s ease;
+}
+@media(max-width: 600px) {
+  .filter-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #exportCSV {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stat-card {
+    flex: 1 1 100%;
+  }
+
+  .drawer-box {
+    width: 90%;
+    border-radius: 12px 0 0 12px;
+  }
+}
+.status-filter {
+  margin-bottom: 10px;
+}
+
+.status-filter select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ffb6d2;
+  outline: none;
+  font-weight: 700;
+  color: #333;
+}
+
+.status-filter select:focus {
+  border-color: #ff4da6;
+  box-shadow: 0 0 6px rgba(255,77,166,0.3);
+}
+/* ================== PAGINATION ================== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pagination button {
+  background: #ff4da6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.pagination button:hover {
+  background: #e60073;
+}
+
+.pagination button.active {
+  background: #e60073;
+}
+/* ================== DARK MODE ================== */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .admin-header {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+body.dark-mode .admin-header button {
+  background: #ff4da6;
+  color: #fff;
+}
+
+body.dark-mode .stat-card {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.dark-mode .orders-section {
+  background: #1f1f1f;
+  color: #e0e0e0;
+}
+
+body.dark-mode table thead {
+  background: #ff4da6;
+  color: #fff;
+}
+
+body.dark-mode table tbody tr {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .delete-btn {
+  background: #ff6ec7;
+  color: #fff;
+}
+
+body.dark-mode .drawer-box {
+  background: #1f1f1f;
+  color: #e0e0e0;
+}
+
+body.dark-mode .drawer-box pre,
+body.dark-mode .drawer-item {
+  background: #2a2a2a;
+  color: #ffaad4;
+}
+
+body.dark-mode .alert-content {
+  background: #2a2a2a;
+  color: #fff;
+  border-color: #ff4da6;
+}
+

@@ -1,7 +1,5 @@
-// index.js
 // ================== FIREBASE ==================
 import { db } from '../firebase.js';
-
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
 // ========= Data =========
@@ -43,7 +41,7 @@ function createCard(p, idx){
   div.setAttribute('tabindex','0');
   div.innerHTML = `
     <div class="thumb" aria-hidden="true">
-      <img loading="lazy" src="${p.imgs[0]}" alt="${p.name} image">
+      <img id="view" loading="lazy" src="${p.imgs[0]}" alt="${p.name} image">
     </div>
     <div class="meta">
       <div class="title">${escapeHtml(p.name)}</div>
@@ -60,7 +58,7 @@ function createCard(p, idx){
       </div>
     </div>
   `;
-  // Event listeners
+  div.querySelector('#view').addEventListener('click',()=> openModal(idx));
   div.querySelector('.view-btn').addEventListener('click',()=> openModal(idx));
   div.querySelector('[data-order]').addEventListener('click',(e)=>{ e.preventDefault(); openOrderWindow(idx); });
   div.addEventListener('keydown',(ev)=>{ if(ev.key==='Enter') openModal(idx); });
@@ -84,11 +82,11 @@ const modalName = document.getElementById('modalName');
 const modalPrice = document.getElementById('modalPrice');
 const modalDesc = document.getElementById('modalDesc');
 const thumbRow = document.getElementById('thumbRow');
-const modalOrder = document.getElementById('modalOrder');
 const modalClose = document.getElementById('modalClose');
 const modalOverlay = document.getElementById('modalOverlay');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+const modalOrderBtn = document.getElementById('modalOrderBtn');
 
 let currentIndex=0;
 let currentImgs=[];
@@ -138,6 +136,7 @@ modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
 prevBtn.addEventListener('click',()=>{ currentImgs.unshift(currentImgs.pop()); updateModal(); });
 nextBtn.addEventListener('click',()=>{ currentImgs.push(currentImgs.shift()); updateModal(); });
+modalOrderBtn.addEventListener('click',()=>{ openOrderWindow(currentIndex); });
 
 // ========= ORDER =========
 let selectedProductIndex = null;
@@ -151,7 +150,7 @@ document.querySelector('.popup-cancel').addEventListener('click',()=>{
   document.getElementById('inputPopup').classList.remove('show');
 });
 
-document.querySelector('.popup-submit').addEventListener('click',()=>{
+document.querySelector('.popup-submit').addEventListener('click',async ()=>{
   const name = document.getElementById('userName').value.trim();
   const contact = document.getElementById('userContact').value.trim();
   const address = document.getElementById('userAddress').value.trim();
@@ -162,22 +161,23 @@ document.querySelector('.popup-submit').addEventListener('click',()=>{
   }
 
   const p = products[selectedProductIndex];
-
-  addDoc(collection(db,"orders"),{
-    name,
-    contact,
-    address,
-    product:p.name,
-    price:p.price,
-    timestamp:new Date()
-  })
-  .then(()=>{
+  
+  try {
+    await addDoc(collection(db,"orders"),{
+      name, contact, address,
+      product:p.name,
+      price:p.price,
+      timestamp:new Date()
+    });
     document.getElementById('inputPopup').classList.remove('show');
     showAlert("Order submitted successfully 💖");
-  })
-  .catch(()=>{
+    launchConfetti();
+    document.getElementById('userName').value='';
+    document.getElementById('userContact').value='';
+    document.getElementById('userAddress').value='';
+  } catch(e){
     showAlert("Failed to submit order 😢");
-  });
+  }
 });
 
 // ========= SEARCH =========
@@ -202,9 +202,8 @@ function runSearch(query, category='all'){
 searchInput.addEventListener('input',()=> runSearch(searchInput.value, categorySelect.value));
 categorySelect.addEventListener('change',()=> runSearch(searchInput.value, categorySelect.value));
 
-// ---------- THEMED ALERT HELPER ----------
+// ---------- ALERT HELPER ----------
 function showAlert(message) {
-  // Create alert box if not exists
   let alertBox = document.querySelector('.alert-box');
   if(!alertBox){
     alertBox = document.createElement('div');
@@ -214,13 +213,39 @@ function showAlert(message) {
       <button>OK</button>
     </div>`;
     document.body.appendChild(alertBox);
-
-    // Close on button click
-    alertBox.querySelector('button').addEventListener('click', () => {
-      alertBox.classList.remove('show');
-    });
+    alertBox.querySelector('button').addEventListener('click', () => alertBox.classList.remove('show'));
   }
-
   alertBox.querySelector('.alert-msg').textContent = message;
   alertBox.classList.add('show');
 }
+// ---------- CONFETTI EFFECT ----------
+function launchConfetti() {
+  const duration = 1800;
+  const end = Date.now() + duration;
+
+  const colors = ['#ff69b4', '#ffd1dc', '#ffc0cb', '#ffb6c1', '#ffa6c9'];
+
+  (function frame() {
+    const timeLeft = end - Date.now();
+    if (timeLeft <= 0) return;
+
+    confetti({
+      particleCount: 3,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors
+    });
+    confetti({
+      particleCount: 3,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors
+    });
+
+    requestAnimationFrame(frame);
+  })();
+}
+
+
